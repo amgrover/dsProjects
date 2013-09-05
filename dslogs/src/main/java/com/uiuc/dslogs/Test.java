@@ -1,4 +1,4 @@
-package dslogs;
+package com.uiuc.dslogs;
 
 public class Test {
 
