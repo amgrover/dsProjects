@@ -3,6 +3,7 @@ package com.uiuc.dslogs;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.uiuc.dslogs.grep.GrepCommand;
 import com.uiuc.dslogs.listener.CommandListener;
 import com.uiuc.dslogs.model.Node;
 import com.uiuc.dslogs.service.ConnectorService;
@@ -17,11 +18,14 @@ public class Test {
 
 		List<Node> nodes = new ArrayList<Node>();
 		Node node = new Node();
-		node.setIpAddress("127.0.0.1");
+		node.setIpAddress("10.0.0.3");
 		node.setSocket(5989);
         nodes.add(node);
 		IConnectorService<Node> connectorService = new ConnectorService();
 		connectorService.connect(nodes);
+		
+		//GrepCommand ExecGrep = new GrepCommand();
+		//ExecGrep.executeGrep(true);
 
 	}
 }
