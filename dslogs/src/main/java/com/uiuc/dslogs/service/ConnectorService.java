@@ -17,7 +17,7 @@ import com.uiuc.dslogs.model.Node;
  */
 public class ConnectorService implements IConnectorService<Node> {
 
-	private static final Integer TIMEOUT = 5;
+	private static final Integer TIMEOUT = 1000; //1 sec
 
 	public Map<String, Integer> connect(List<Node> nodes) {
 		Map<String, Integer> result = new HashMap<String, Integer>();
