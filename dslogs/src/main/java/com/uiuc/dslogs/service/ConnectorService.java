@@ -1,6 +1,12 @@
 package com.uiuc.dslogs.service;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.HashMap;
@@ -33,10 +39,16 @@ public class ConnectorService implements IConnectorService<Node> {
 
 			} else
 				try {
-
+					
 					socket.connect(endPoint, TIMEOUT);
 					System.out.printf("Success:    %s  \n", endPoint);
-					result.put(node.getIpAddress(), 0);
+					OutputStream outputStream= socket.getOutputStream();
+					OutputStreamWriter outputStreamWriter= new OutputStreamWriter(outputStream);
+					BufferedWriter bufferedWriter= new BufferedWriter(outputStreamWriter);
+					bufferedWriter.write("grep");
+					System.out.println("Message Sent to server");
+					bufferedWriter.flush();
+					
 
 				} catch (IOException ioe) {
 

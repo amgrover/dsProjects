@@ -16,13 +16,7 @@ public class Test {
 		
 		commandListener.startService(5989);
 
-		List<Node> nodes = new ArrayList<Node>();
-		Node node = new Node();
-		node.setIpAddress("10.0.0.3");
-		node.setSocket(5989);
-        nodes.add(node);
-		IConnectorService<Node> connectorService = new ConnectorService();
-		connectorService.connect(nodes);
+		
 		
 		//GrepCommand ExecGrep = new GrepCommand();
 		//ExecGrep.executeGrep(true);
